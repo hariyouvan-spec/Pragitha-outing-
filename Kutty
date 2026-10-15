@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>A Little Surprise for Pragitha ❤️</title>
+<style>
+:root {
+  --pink: #ff5f9e;
+  --hot: #ff3f83;
+  --cream: #fff9f4;
+  --ink: #513746;
+  --purple: #8b69c9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(135deg,#fff0f5,#fff6e9,#f5edff);
+  overflow-x: hidden;
+}
+button, select { font: inherit; }
+button { cursor: pointer; border: 0; }
+#floaties {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.floaty {
+  position: absolute;
+  bottom: -60px;
+  animation: floatUp linear forwards;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .8; }
+  100% { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+}
+.wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 22px 14px;
+  position: relative;
+  z-index: 1;
+}
+.card {
+  width: min(100%,540px);
+  background: #ffffffed;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: clamp(22px,5vw,38px);
+  text-align: center;
+  box-shadow: 0 18px 50px #b84e7920;
+  animation: appear .45s ease both;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.topline {
+  color: #bd6b8a;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+h1 {
+  font-size: clamp(2rem,8vw,3.2rem);
+  line-height: 1.1;
+  color: #e83f82;
+  margin: 12px 0;
+}
+h2 {
+  color: #d94a83;
+  font-size: clamp(1.4rem,5vw,2rem);
+  line-height: 1.2;
+}
+p { line-height: 1.65; }
+.small { font-size: .85rem; color: #987a89; }
+.mascot {
+  font-size: 4.3rem;
+  display: inline-block;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%,100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-9px) rotate(4deg); }
+}
+.hero-art {
+  width: 155px;
+  height: 155px;
+  margin: 18px auto;
+  border-radius: 30px;
+  background: linear-gradient(145deg,#ffe1eb,#fff3c9);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 28px #ed83a42b;
+}
+.hero-art span { font-size: 4.5rem; }
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 22px 0 8px;
+}
+.btn {
+  border-radius: 999px;
+  padding: 14px 21px;
+  font-weight: 800;
+  min-height: 48px;
+  transition: transform .2s;
+}
+.btn:hover { transform: translateY(-3px); }
+.primary { background: linear-gradient(135deg,#ff6ca7,#ff4388); color: white; }
+.secondary { background: white; color: #d94a83; border: 1px solid #ffd0df; }
+.soft { background: #f1e9ff; color: #7451a9; }
+.option-grid {
+  display: grid;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+.option {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  border: 2px solid #f4d8e3;
+  border-radius: 18px;
+  background: #fffafc;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.option .emoji { font-size: 1.6rem; }
+.option .opttext { font-weight: 800; }
+.option .subtext {
+  display: block;
+  font-size: .82rem;
+  color: #a18492;
+  margin-top: 4px;
+}
+.option.selected {
+  border-color: var(--pink);
+  background: #fff0f6;
+  box-shadow: 0 0 0 4px #ff5f9e18;
+}
+.option.selected::after {
+  content: "✓";
+  margin-left: auto;
+  color: #e83f82;
+  font-weight: 900;
+}
+.field {
+  display: block;
+  text-align: left;
+  margin: 14px auto;
+  max-width: 400px;
+  font-weight: 800;
+  font-size: .9rem;
+  color: #8e5871;
+}
+select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  border: 2px solid #f3d7e3;
+  border-radius: 14px;
+  padding: 13px;
+  background: white;
+  color: var(--ink);
+}
+.summary {
+  background: linear-gradient(135deg,#fff0f6,#fff9e9);
+  border: 1px solid #ffd5e3;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: left;
+  margin: 18px auto;
+  max-width: 400px;
+}
+.summary div {
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0c5d5;
+  display: flex;
+  gap: 10px;
+}
+.summary div:last-child { border: 0; }
+.summary b { min-width: 75px; color: #c74c7d; }
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+.dot { width: 15px; height: 6px; border-radius: 9px; background: #f3d4e0; }
+.dot.active { width: 28px; background: #ff5f9e; }
+.confetti { font-size: 1.6rem; letter-spacing: .15em; }
+.footer { margin-top: 20px; font-size: .75rem; color: #b28b9b; }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration: .01ms !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="floaties" aria-hidden="true"></div>
+<main class="wrap">
+  <section class="card" id="app" aria-live="polite"></section>
+</main>
+
+<script>
+(() => {
+  const app = document.getElementById("app");
+  const state = {
+    slide: 1,
+    noCount: 0,
+    activity: "",
+    date: "",
+    place: "A cosy café nearby",
+    time: "5:30 PM"
+  };
+
+  const activities = [
+    ["Coffee date","☕","Coffee, snacks & silly talks"],
+    ["Evening walk","🌇","A little walk, a lot of chatting"],
+    ["Movie outing","🎬","Popcorn and movie-time fun"]
+  ];
+
+  const dates = [
+    ["2026-10-17","Saturday, October 17, 2026"],
+    ["2026-10-18","Sunday, October 18, 2026"],
+    ["2026-10-19","Monday, October 19, 2026"]
+  ];
+
+  const places = [
+    "A cosy café nearby",
+    "A park or beach promenade",
+    "A mall / cinema",
+    "Let’s decide together"
+  ];
+
+  const times = ["10:00 AM","12:00 PM","4:00 PM","5:30 PM","6:00 PM"];
+
+  function escapeHTML(text) {
+    return String(text).replace(/[&<>"']/g, c => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    })[c]);
+  }
+
+  function button(text, cls, action) {
+    return `<button class="btn ${cls}" data-action="${action}">${text}</button>`;
+  }
+
+  function option(value, emoji, subtitle, group) {
+    const selected = state[group] === value;
+    return `<button class="option ${selected ? "selected" : ""}"
+      data-pick="${escapeHTML(value)}" data-group="${group}"
+      aria-pressed="${selected}">
+      <span class="emoji">${emoji}</span>
+      <span><span class="opttext">${escapeHTML(value)}</span>
+      ${subtitle ? `<span class="subtext">${escapeHTML(subtitle)}</span>` : ""}</span>
+    </button>`;
+  }
+
+  function shell(title, content) {
+    return `<div class="topline">${title}</div>
+      <div class="progress">${Array.from({length:10},(_,i)=>
+        `<span class="dot ${i+1===state.slide ? "active" : ""}"></span>`
+      ).join("")}</div>
+      ${content}
+      <div class="footer">made with a tiny bit of courage & lots of ❤️</div>`;
+  }
+
+  function go(slide) {
+    state.slide = slide;
+    render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  function render() {
+    let content = "";
+
+    switch(state.slide) {
+      case 1:
+        content = `
+          <div class="hero-art" aria-label="Character placeholder">
+            <span>🧸</span>
+          </div>
+          <h1>Hey Pragitha ❤️</h1>
+          <p>I have a little surprise for you… 🫣</p>
+          <div class="mascot">💌</div>
+          <p class="small">No pressure, just a cute little question from me.</p>
+          <div class="btns">${button("Open My Surprise 💌","primary","start")}</div>`;
+        app.innerHTML = shell("a tiny surprise, just for you",content);
+        break;
+
+      case 2:
+        content = `
+          <div class="mascot">🥹🌸</div>
+          <h2>Will you go on a little outing with me? 🥹❤️</h2>
+          <p>I promise good vibes, silly conversations, and at least one terrible joke.</p>
+          <div class="btns">
+            ${button("Yes, let’s go! 💖","primary","yes")}
+            ${button("No 🙈","secondary","no")}
+          </div>`;
+        app.innerHTML = shell("question no. 1",content);
+        break;
+
+      case 3:
+      case 4:
+      case 5: {
+        const prompts = [
+          ["🥺","Are you sure? 🥺","Maybe the coffee will be extra cute… just saying."],
+          ["😩❤️","Really…? Give me one more chance! 😩❤️","I’ll bring my best jokes. They’re not very good, but they’re heartfelt."],
+          ["🌹","Think again, Pragitha… I planned something cute! 🌹","No pressure at all. You can say yes whenever you feel like it."]
+        ];
+        const p = prompts[state.noCount-1] || prompts[2];
+        content = `
+          <div class="mascot">${p[0]}</div>
+          <h2>${p[1]}</h2><p>${p[2]}</p>
+          <div class="btns">
+            ${button("Okay, YES! 💗","primary","yes")}
+            ${button(state.noCount>=3 ? "Still no, sorry 💛" : "No 🙈","secondary","no")}
+          </div>
+          <p class="small">Your choice matters, always. ❤️</p>`;
+        app.innerHTML = shell("one tiny follow-up",content);
+        break;
+      }
+
+      case 6:
+        content = `
+          <div class="mascot">☕🌷</div>
+          <h2>Pick our little adventure</h2>
+          <p>What sounds most fun to you?</p>
+          <div class="option-grid">
+            ${activities.map(a=>option(a[0],a[1],a[2],"activity")).join("")}
+          </div>
+          <div class="btns">${button("Next →","primary","activityNext")}</div>`;
+        app.innerHTML = shell("let’s plan something cute",content);
+        break;
+
+      case 7:
+        content = `
+          <div class="mascot">🗓️💗</div>
+          <h2>Which day works for you?</h2>
+          <p>Choose whichever feels comfortable.</p>
+          <div class="option-grid">
+            ${dates.map(d=>option(d[1],"📅",d[0],"date")).join("")}
+          </div>
+          <div class="btns">
+            ${button("Back","secondary","backActivity")}
+            ${button("Next →","primary","dateNext")}
+          </div>`;
+        app.innerHTML = shell("pick a date",content);
+        break;
+
+      case 8:
+        content = `
+          <div class="mascot">📍✨</div>
+          <h2>Now, the where & when!</h2>
+          <p>We can always adjust these together later.</p>
+          <label class="field">📍 Place
+            <select id="placeSelect">
+              ${places.map(p=>`<option ${state.place===p?"selected":""}>${escapeHTML(p)}</option>`).join("")}
+            </select>
+          </label>
+          <label class="field">🕰️ Time
+            <select id="timeSelect">
+              ${times.map(t=>`<option ${state.time===t?"selected":""}>${t}</option>`).join("")}
+            </select>
+          </label>
+          <div class="summary">
+            <div><b>Activity</b><span>${escapeHTML(state.activity)}</span></div>
+            <div><b>Date</b><span>${escapeHTML(state.date)}</span></div>
+          </div>
+          <div class="btns">
+            ${button("Back","secondary","backDate")}
+            ${button("Looks good! 💕","primary","confirm")}
+          </div>`;
+        app.innerHTML = shell("the fun little details",content);
+        break;
+
+      case 9:
+        content = `
+          <div class="confetti">🌸 💗 🌹 💖 🌷</div>
+          <div class="mascot">🥰</div>
+          <h2>Yay, Pragitha! ❤️</h2>
+          <p>Our little outing plan is ready! 🌸</p>
+          <div class="summary">
+            <div><b>Activity</b><span>${escapeHTML(state.activity)}</span></div>
+            <div><b>Date</b><span>${escapeHTML(state.date)}</span></div>
+            <div><b>Place</b><span>${escapeHTML(state.place)}</span></div>
+            <div><b>Time</b><span>${escapeHTML(state.time)}</span></div>
+          </div>
+          <p class="small">Google Calendar opens a draft for you to review and save.</p>
+          <div class="btns">
+            ${button("Add to Google Calendar 📅","primary","calendar")}
+            ${button("One last surprise →","soft","final")}
+          </div>`;
+        app.innerHTML = shell("your little plan",content);
+        break;
+
+      case 10:
+        content = `
+          <div class="confetti">💗 🌸 ❤️ 🌹 💕</div>
+          <div class="mascot">🥹🫶</div>
+          <h2>A tiny note for you…</h2>
+          <p>Thank you for making this little surprise special, Pragitha ❤️🌹</p>
+          <p>Whatever the plan becomes, I’m glad I got to make you smile for a moment. 🌷</p>
+          <div class="hero-art"><span>💌</span></div>
+          <p class="small">The end… no extra slides, promise. 💗</p>`;
+        app.innerHTML = shell("the final page",content);
+        break;
+    }
+  }
+
+  function openCalendar() {
+    const date = dates.find(d=>d[1]===state.date);
+    if(!date) return;
+
+    const [clock, ampm] = state.time.split(" ");
+    let [hour,minute] = clock.split(":").map(Number);
+    if(ampm==="PM" && hour!==12) hour+=12;
+    if(ampm==="AM" && hour===12) hour=0;
+
+    // Format a local calendar time without a UTC offset.
+    const start = date[0].replaceAll("-","")+"T"+
+      String(hour).padStart(2,"0")+
+      String(minute).padStart(2,"0")+"00";
+
+    let endHour = hour+2;
+    let endDate = date[0];
+    if(endHour>=24) {
+      endHour-=24;
+      const next = new Date(date[0]+"T12:00:00");
+      next.setDate(next.getDate()+1);
+      endDate = next.getFullYear()+
+        String(next.getMonth()+1).padStart(2,"0")+
+        String(next.getDate()).padStart(2,"0");
+    } else {
+      endDate = date[0].replaceAll("-","");
+    }
+
+    const end = endDate+"T"+
+      String(endHour).padStart(2,"0")+
+      String(minute).padStart(2,"0")+"00";
+
+    const details = `Activity: ${state.activity}\nPlace idea: ${state.place}\nTime: ${state.time}\nPlease confirm the details together.`;
+
+    const url = "https://calendar.google.com/calendar/render?action=TEMPLATE"+
+      "&text="+encodeURIComponent("A little outing with Pragitha ❤️")+
+      "&dates="+start+"/"+end+
+      "&details="+encodeURIComponent(details)+
+      "&location="+encodeURIComponent(state.place);
+
+    window.open(url,"_blank","noopener,noreferrer");
+  }
+
+  app.addEventListener("click",event=>{
+    const picked = event.target.closest("[data-pick]");
+    if(picked) {
+      state[picked.dataset.group] = picked.dataset.pick;
+      render();
+      return;
+    }
+
+    const btn = event.target.closest("[data-action]");
+    if(!btn) return;
+
+    switch(btn.dataset.action) {
+      case "start": go(2); break;
+      case "yes": go(6); break;
+      case "no":
+        if(state.noCount < 3) {
+          state.noCount++;
+          go(state.noCount+2);
+        } else {
+          // Respect her final answer; no more persuasion screens.
+          go(10);
+        }
+        break;
+      case "activityNext":
+        if(!state.activity) {
+          alert("Pick one activity first 😊");
+          return;
+        }
+        go(7);
+        break;
+      case "backActivity": go(6); break;
+      case "dateNext":
+        if(!state.date) {
+          alert("Choose a date first 🌸");
+          return;
+        }
+        go(8);
+        break;
+      case "backDate": go(7); break;
+      case "confirm":
+        state.place = document.getElementById("placeSelect").value;
+        state.time = document.getElementById("timeSelect").value;
+        go(9);
+        break;
+      case "calendar": openCalendar(); break;
+      case "final": go(10); break;
+    }
+  });
+
+  // Floating decorations use emoji only. No external image libraries.
+  const floaties = document.getElementById("floaties");
+  const symbols = ["❤️","🌸","🌹","💗","🌷","✨"];
+
+  function addFloaty() {
+    const el = document.createElement("span");
+    el.className = "floaty";
+    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left = Math.random()*100+"%";
+    el.style.fontSize = (15+Math.random()*20)+"px";
+    el.style.animationDuration = (8+Math.random()*9)+"s";
+    floaties.appendChild(el);
+    setTimeout(()=>el.remove(),18000);
+  }
+
+  for(let i=0;i<15;i++) setTimeout(addFloaty,i*350);
+  setInterval(addFloaty,900);
+
+  render();
+})();
+</script>
+</body>
+</html>
